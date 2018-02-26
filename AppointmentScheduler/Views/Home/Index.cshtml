@@ -1,0 +1,126 @@
+﻿<div class="row" style="margin-left:75px; margin-top:15px;margin-bottom:15px;">
+    <div class="col-lg-1">
+        <button class="btn btn-sm" id="addpatient">Add Patient</button>
+    </div>
+    <div class="col-lg-1">
+        <button class="btn btn-sm" id="addstaff">Add Staff</button>
+    </div>
+    <div class="col-lg-1">
+        <button class="btn btn-sm" id="addspecialty">Add Specialty</button>
+    </div>
+</div>
+
+<div class="row" style="margin-left:75px">
+    <div class="col"></div>
+    <div class="col" id="scheduler"></div>
+    <div class="col"></div>
+</div>
+
+<div class="hide">
+    <div id="adduser-form" title="Add Patient">
+        <form>
+            <div class="form-group">
+                <label for="patientfirstname">First Name</label>
+                <input type="email" class="form-control" name="patientfirstname" id="patientfirstname" placeholder="First Name">
+                <span class="field-validation-error hide patientFirstNameError">Enter First Name</span>
+            </div>
+            <div class="form-group">
+                <label for="patientlastname">Last Name</label>
+                <input type="email" class="form-control" name="patientlastname" id="patientlastname" placeholder="Last Name">
+                <span class="field-validation-error hide patientLastNameError">Enter Last Name</span>
+            </div>
+            <div class="form-group">
+                <label for="patientdob">Date of birth</label>
+                <input type="email" class="form-control" id="patientdob">
+                <span class="field-validation-error hide patientDOBError">Enter Date of birth</span>
+                <span class="field-validation-error hide patientExistsError">Patient already exists</span>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="hide">
+    <div id="addspecialty-form" title="Add Specialty">
+        <form>
+            <div class="form-group">
+                <label for="specialtyName">Specialty Name</label>
+                <input type="email" class="form-control" name="specialtyName" id="specialtyName" placeholder="Specialty Name">
+                <span class="field-validation-error hide addSpecialtyError">Enter Specialty Name</span>
+                <span class="field-validation-error hide addSpecialtyExists">Specialty already exists</span>
+            </div>
+            <div class="form-group">
+                <label for="subspecialtyName">Sub-Specialty Name</label>
+                <input type="email" class="form-control" style="width:80%;display:inline;" name="subspecialtyName" id="subspecialtyName" placeholder="Sub-Specialty Name" />
+                <div class="glyphicon glyphicon-plus" id="addSubspecialty" style="margin-left:10px;"></div>
+                <span class="field-validation-error hide addSubspecialtyerror">Enter Sub-Specialty Name</span>
+            </div>
+            <div class="form-group">
+                <select class="form-control" id="newsubspecialities" multiple>
+                </select>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="hide">
+    <div id="addstaff-form" title="Add Staff">
+        <form>
+            <div class="form-group">
+                <label for="staffFirstname">First Name</label>
+                <input type="email" class="form-control" name="staffFirstname" id="staffFirstname" placeholder="First Name">
+                <span class="field-validation-error hide staffFirstNameError">Enter First Name</span>
+            </div>
+            <div class="form-group">
+                <label for="staffLastname">Last Name</label>
+                <input type="email" class="form-control" name="staffLastname" id="staffLastname" placeholder="Last Name">
+                <span class="field-validation-error hide staffLastNameError">Enter Last Name</span>
+            </div>
+            <div class="form-group">
+                <label for="staffSpecialty">Specialty</label>
+                <select class="form-control" name="staffSpecialty" id="staffSpecialty">                    
+                </select>
+                <span class="field-validation-error hide staffSpecialtyError">Select Specialty</span>
+                <span class="field-validation-error hide staffexists">Staff already exists</span>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="hide">
+    <div id="appointment-form" title="Create Appointment">
+        <form>
+            <div class="form-group">
+                <label for="appointmentSummary">Appointment Summary</label>
+                <input type="text" class="form-control" name="appointmentSummary" id="appointmentSummary" placeholder="Appointment Summary">
+                <input type="hidden" id="appointmentId">
+                <span class="field-validation-error hide appointmentSummaryerror">Enter Appointment summary</span>
+            </div>
+            <div class="form-group">
+                <label for="patientName">Patient Name</label>
+                <input type="text" class="form-control" name="patientName" id="patientName" placeholder="Patient Name">
+                <span class="field-validation-error hide appointmentPatientNameError">Enter valid patient name</span>
+                <input type="hidden" id="patientId">
+            </div>
+            <div class="form-group">
+                <label for="staffName">Staff Name</label>
+                <input type="text" class="form-control" name="staffName" id="staffName" placeholder="Staff Name">
+                <span class="field-validation-error hide appointmentStaffNameError">Enter valid staff name</span>
+                <input type="hidden" id="staffId">
+            </div>
+            <div class="form-group">
+                <label for="serviceProvided">Service Provided</label>
+                <select class="form-control" name="serviceProvided" id="serviceProvided">                    
+                </select>
+                <span class="field-validation-error hide appointmentServiceProvidedError">Select service provided</span>
+            </div>
+            <div class="form-group">
+                <label for="fromDatetime">From</label>
+                <input type="datetime" class="form-control" name="fromDatetime" id="fromDatetime">
+                <span class="field-validation-error hide appointmentFromDateError">Select From date</span>
+            </div>
+            <div class="form-group">
+                <label for="toDatetime">To</label>
+                <input type="datetime" class="form-control" name="toDatetime" id="toDatetime">
+                <span class="field-validation-error hide appointmentToDateError">Select To date</span>
+            </div>
+            <span class="field-validation-error hide appointmenterror">Appointment cannot be created, staff must have a specialty of "Geriatrics"</span>
+        </form>
+    </div>
+</div>
